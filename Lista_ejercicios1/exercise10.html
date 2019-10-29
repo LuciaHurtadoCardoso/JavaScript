@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Colores</title>
+    <script>
+        function CambiarColor(id)
+        {
+            // document.getElementById("parrafo").style = `color: ${id}`;
+            document.getElementById("parrafo").style = `background-color: ${id}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Texto de colores</h1>
+    <p id="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ullam ipsam magni odio, corporis <br>
+    temporibus earum perferendis quae eligendi, nostrum quas. Laudantium rem et laboriosam ut ipsam vel facere est.</p>
+    <button id="red" onclick="CambiarColor(this.id)">Rojo</button>
+    <button id="blue" onclick="CambiarColor(this.id)">Azul</button>
+    <button id="green" onclick="CambiarColor(this.id)">Verde</button>
+    <button id="pink" onclick="CambiarColor(this.id)">Rosa</button>
+    <button id="purple" onclick="CambiarColor(this.id)">Lila</button>
+</body>
+</html>

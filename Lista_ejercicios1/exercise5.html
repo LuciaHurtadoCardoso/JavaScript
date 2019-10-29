@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadena/Array</title>
+
+    <script>
+        cadena = prompt("Inserte la cadena",1);
+        function Informacion(cadena){
+            var resultado = "";
+            var cadenaArray = cadena.split(" ");
+            resultado += `La cadena tiene ${cadenaArray.length} palabras <br>
+                        La primera palabra de la cadena es ${cadenaArray[0]} <br>
+                        La última palabra de la cadena es ${cadenaArray[cadenaArray.length-1]} <br>
+                        La cadena ordenada de la a la z quedaría: ${cadenaArray.sort()} <br>
+                        La cadena ordenada de la z la a quedaría: ${cadenaArray.reverse()}`;
+
+            return resultado;
+        }
+
+        
+        onload = function(){
+            document.getElementById("parrafo").innerHTML = Informacion(cadena);
+        }
+    </script>
+</head>
+<body>
+        <h1>Información sobre la cadena</h1>
+        <p id="parrafo"></p>
+</body>
+</html>

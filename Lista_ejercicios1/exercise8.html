@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercise8</title>
+
+    <script>
+    var letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+    var arrayLetras = letras.split("");
+    arrayLetras.sort();
+    var cadena = "";
+
+    function comprobar(){
+        var dni = document.getElementById("dni").value;
+        var letra = document.getElementById("letra").value;
+        if (letra === letras.charAt(dni%23)){
+            cadena = "El DNI es correcto";
+        }else{
+            cadena = "El DNI es incorrecto";
+        }
+        document.getElementById("resultado").innerHTML = cadena;
+    }
+    
+    
+
+    </script>
+</head>
+<body>
+    <h1>Comprobación de la letra del DNI</h1>
+    Número de DNI: <input type="number" id="dni">
+    Letra de DNI: <select id="letra">
+        <script> 
+        for(var i = 0; i < arrayLetras.length; i++)
+        {
+            document.write(`<option value = "${arrayLetras[i]}">${arrayLetras[i]}</option>`);
+        }
+        </script>
+    </select>
+    <button id="comprobar" onclick="comprobar()">Comprobar</button>
+    <p id="resultado"></p>
+</body>
+</html>

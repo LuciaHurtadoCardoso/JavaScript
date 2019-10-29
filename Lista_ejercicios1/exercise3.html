@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Factorial de un número entero</title>
+    <script>
+    
+    function Factorial (num)
+    {
+        var cadena = `${num}! = ${num} x `;
+        var factorial = num;
+        var i = 1;
+        for(i = 1; i < num; i++)
+        {
+            if(i < num-1)
+            {
+                cadena += `${num-i} x `;
+                factorial = factorial * (num-i);
+            }
+            else{ 
+                factorial = factorial * (num-i);
+                cadena += `${num-i} = ${factorial}`;
+            } 
+        }
+        return cadena;
+    }
+
+    onload = function(){
+        document.getElementsByTagName("button")[0].onclick = function(){
+            document.getElementById("parrafo").innerHTML = Factorial(document.getElementById("numero").value);
+        }
+    }
+    </script>
+</head>
+<body>
+    <h1>Factorial de un número entero</h1>
+    Número entero: <input type="number" id="numero">
+    <button>Generar factorial</button>
+    <p id="parrafo"></p>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Palíndromo</title>
+    <script>
+    function QuitarPuntuacion(cadena) {
+        var acentos = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç";
+        var original = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc";
+        
+        for (var i=0; i<acentos.length; i++) {
+            cadena = cadena.replace(new RegExp(acentos.charAt(i), 'g'), original.charAt(i));
+        }
+        var puntuacion = ".,;:¡!-";
+        for(var i=0; i<puntuacion.length; i++)
+        {
+            cadena = cadena.replace(new RegExp(puntuacion.charAt(i), 'g'), "");
+        }
+        
+        return cadena;
+    }
+
+    function Comprueba (cadena){
+        var nuevaCadena = cadena.split("").reverse().join(" ");
+        if(QuitarPuntuacion(cadena.replace(/ /g, "").toLowerCase()) == QuitarPuntuacion(nuevaCadena.replace(/ /g, "").toLowerCase())){
+            return `Es palíndromo`;
+        }else{
+            return `No es palíndromo`;
+        }
+    }
+
+    onload = function(){
+        document.getElementsByTagName("button")[0].onclick = function(){
+            document.getElementById("parrafo").innerHTML = Comprueba(document.getElementById("cadena").value);
+            }
+        }</script>
+</head>
+<body>
+    <h1>¿Es palíndromo?</h1>
+    Introduce la cadena: <input type="text" id="cadena">
+    <button>Comprobar</button>
+    <p id="parrafo"></p>
+</body>
+</html>

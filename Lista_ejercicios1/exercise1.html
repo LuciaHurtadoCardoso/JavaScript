@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nº y sus múltiplos</title>
+    <script>
+    function Multiplica(a)
+    {
+        var cadena = "";
+        for(i=1; i <=10; i++)
+        {
+            //cadena += a + " x " + i + " = " + (a*i) + "<br>";
+            cadena += `${a} x ${i} = ${a*i} <br>`;
+        }
+        return cadena;
+    }
+
+    //PRIMERA FORMA DE HACERLO
+    // var numero;
+    // numero = parseInt(prompt("Inserte un número",1));
+    // document.write("<h1>Tabla de multiplicar del "+numero+"</h1>");
+    // document.write(Multiplica(numero));
+
+    onload= function() {
+        document.getElementsByTagName("button")[0].onclick = function(){
+            document.getElementById("tabla").innerHTML = Multiplica(document.getElementById("numero").value);
+        }
+    }
+
+    </script>
+</head>
+<body>
+    <h1>Tabla de multiplicar</h1>
+    Número: <input type="number" min="1" max="10" id="numero">
+    <button>Generar tabla</button>
+    <div id="tabla">
+
+    </div>
+</body>
+</html>
