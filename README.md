@@ -1,1 +1,1 @@
-ECHO est  activado.
+Ejercicios JavaScript DWEC
