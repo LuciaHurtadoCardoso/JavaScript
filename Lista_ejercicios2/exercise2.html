@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Área circulo</title>
+    <script>
+        var CalcularArea = function(){
+            var radio = document.getElementById("radio").value;
+            var area = (Math.PI * Math.pow(radio,2)).toFixed(2);
+            document.getElementById("parrafo").innerHTML = `El área de un circulo con un radio de ${radio} cm es de ${area} cm<sup>2</sup>`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Área de un circulo</h1>
+    <input type="number" name="radio" id="radio">
+    <button id="calcular" onclick="CalcularArea()">Calcular</button>
+    <p id="parrafo"></p>
+</body>
+</html>

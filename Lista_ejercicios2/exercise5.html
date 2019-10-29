@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrays y sus métodos</title>
+
+    <script>
+    function muestraArray(array){
+        document.getElementById("parrafo").innerHTML = "";
+        var i = 0;
+        for(i = 0; i < array.length; i++){
+            if(i != array.length-1){
+                document.getElementById("parrafo").innerHTML += array[i]+ ", ";
+            }else{
+                document.getElementById("parrafo").innerHTML += array[i];
+            }
+        }
+    }
+    var array = [];
+    function actua(num)
+    {
+        var numAleatorio = Math.random()*1001;
+        numAleatorio = Math.floor(numAleatorio);
+        switch(num){
+            case 1: {
+                array.unshift(numAleatorio);
+                muestraArray(array);
+                }  break;
+            case 2: {
+                array.push(numAleatorio);
+                muestraArray(array);
+                }  break;
+            case 3: {
+                array.shift(numAleatorio); 
+                muestraArray(array);
+                }  break;
+            case 4: {
+                array.pop(numAleatorio); 
+                muestraArray(array);
+                }  break;
+            case 5: {
+                array.sort(function(a, b){return a - b}); 
+                muestraArray(array);
+                }  break;
+            case 6: {
+                array.sort(function(a,b){return b-a});
+                muestraArray(array);
+                } 
+        }
+    }
+    </script>
+</head>
+<body>
+    <button onclick="actua(1)">Inserta al principio</button><br><br>
+    <button onclick="actua(2)">Inserta al final</button><br><br>
+    <button onclick="actua(3)">Borrar del principio</button><br><br>
+    <button onclick="actua(4)">Borrar del final</button><br><br>
+    <button onclick="actua(5)">Ordenar de forma ascendente</button><br><br>
+    <button onclick="actua(6)">Ordenar de forma descendente</button><br><br>
+    <p id="parrafo"></p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Resta</title>
+    <script>
+        var Resta = function(){
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+            var resta = 0;
+            var cadena = "";
+            if(num1<num2){
+                resta = num2 - num1;
+                cadena = `La resta de ${num2} - ${num1} = ${resta}`;
+            }else{
+                resta = num1 - num2;
+                cadena = `La resta de ${num1} - ${num2} = ${resta}`;
+            }
+            document.getElementById("parrafo").innerHTML = cadena;
+        }
+        
+    </script>
+</head>
+<body>
+    <h1>Resta de dos números</h1>
+    Introduce el primer número: <input type="number" name="num1" id="num1"><br>
+    Introduce el segundo número: <input type="number" name="num2" id="num2"><br>
+    <button id="calcular" onclick="Resta()">Resta</button>
+    <p id="parrafo"></p>
+</body>
+</html>

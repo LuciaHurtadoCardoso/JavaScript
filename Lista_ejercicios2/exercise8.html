@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adivina</title>
+    <script>
+        var num = Math.random()*101;
+        num = Math.floor(num);
+        var Comprobar = function(){
+            var numUsuario = document.getElementById("num").value;
+            var cadena = "";
+            if(numUsuario < num){
+                cadena = `Mi número es mayor`;
+            }else if(numUsuario > num){
+                cadena = `Mi número es menor`;
+            }else if(num == numUsuario){
+                cadena = `FELICIDADES!! HAS ACERTADO`;
+                calcular.disabled = true;
+            }
+            document.getElementById("parrafo").innerHTML = cadena;
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Adivina el número del 1 al 100</h1>
+    Introduce un número: <input type="number" name="num" id="num"><br>
+    <button id="calcular" onclick="Comprobar()">Comprobar</button>
+    <p id="parrafo"></p>
+</body>
+</html>

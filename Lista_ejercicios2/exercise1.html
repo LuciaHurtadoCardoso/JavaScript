@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Milisegundos</title>
+    <script>
+        window.onload = function(){
+            var fechaInicio = new Date();
+            var añoActual = fechaInicio.getFullYear();
+            var fechaFin = new Date(añoActual, 12, 31, 00, 00, 00);
+
+            document.getElementById("parrafo").innerHTML += fechaFin.getTime() - fechaInicio.getTime()+" milisegundos";
+        }
+    </script>
+</head>
+<body>
+    <h1>¿Cuántos milisegundos?</h1>
+    <p id="parrafo">Entre el día de hoy y el 31 de Diciembre hay </p>
+</body>
+</html>

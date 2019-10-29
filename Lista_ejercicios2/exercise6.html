@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Número primo</title>
+    <script>
+        var Muestra = function(){
+            var num = document.getElementById("num").value;
+            var primo = EsPrimo(num);
+            if(primo){
+            document.getElementById("parrafo").innerHTML = `${num} es primo`;
+            }else{
+                document.getElementById("parrafo").innerHTML = `${num} no es primo`;
+            }
+        }
+        
+        var EsPrimo = function(num){
+            var primo = true;
+            var i =0;
+            for(i = 2; i < num; i++){
+                if(num%i == 0){
+                    primo = false;
+                    i = num;
+                }
+            }
+            return primo;
+        }
+        
+    </script>
+</head>
+<body>
+    <h1>Número primo</h1>
+    Introduce el número: <input type="number" name="num" id="num">
+    <button id="calcular" onclick="Muestra()">¿Es primo?</button>
+    <p id="parrafo"></p>
+</body>
+</html>

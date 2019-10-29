@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadena</title>
+    <script>
+        var InformacionCadena = function(){
+            var cadena = document.getElementById("cadena").value;
+            var longitud = cadena.length;
+            document.getElementById("parrafo").innerHTML = `El tamaño de la cadena introducida es de ${longitud} carácteres <br> 
+                                                            La cadena en cursiva quedaría así: ${cadena.italics()} <br>
+                                                            La cadena tachada quedaría así: ${cadena.strike()}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Cadena</h1>
+    <input type="text" name="cadena" id="cadena">
+    <button id="mostrarInformacion" onclick="InformacionCadena()">Mostrar información</button>
+    <p id="parrafo"></p>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario</title>
+    <script>
+    var Comprueba = function(){
+        var enviar = true;
+        var nombre = document.getElementById("nombre").value;
+        var expEspacios = /\S/;
+        if(nombre == "" || expEspacios.test(nombre)){
+            document.getElementById("nombre").innerHTML += ` El nombre no puede ir vacío`;
+            enviar = false;
+        }
+
+        return enviar;
+    }
+    </script>
+</head>
+<body>
+    <h1>Formulario</h1>
+    <form action="grabarDatos.php" method="POST" onsubmit="return Comprueba()">
+        <p id="nombre">Nombre: <input type="text" name="nombre" id="nombre"></p>
+        <p id="email">Email: <input type="text" name="email" id="email"></p>
+        <p id="contraseña1">Contraseña: <input type="password" name="contraseña1" id="contraseña1"></p>
+        <p id="contraseña2">Repite la contraseña: <input type="password" name="contraseña2" id="contrasñe2"></p>
+        <p id="suma">¿Eres un robot? </p><input type="number" name="suma" id="suma">
+        <p id="acepto">Acepto las condiciones: <input type="checkbox" name="acepto" id="acepto"></p>
+        <p><input type="submit" value="Crear cuenta" id="boton"></p>
+    </form>
+</body>
+</html>
